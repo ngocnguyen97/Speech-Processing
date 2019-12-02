@@ -27,7 +27,7 @@ def R(dat):
 	kq = []
 	data1 = np.arange(len(dat))
 	for i in range(len(dat)):
-		if abs(dat[i]) < 3000:
+		if abs(dat[i]) < 1000:
 			data1[i] = 0;
 		else:
 			data1[i] = dat[i]

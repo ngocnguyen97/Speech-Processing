@@ -20,11 +20,10 @@ sizecut = 256
 start = 6000
 #start = 100
 
-sg = data[start :start + sizecut] - 0.95 * data[start - 1:start - 1 + sizecut]
-
-ax1.plot(sg)
+ax1.plot(data[start :start + sizecut])
 ax1.set_title('Original')
 
+sg = data[start :start + sizecut] - 0.95 * data[start - 1:start - 1 + sizecut]
 # sg = configFilter(sg)
 
 ax2.plot(sg)
@@ -33,10 +32,10 @@ ax2.set_title('After Adjust Filter')
 sg = sg * np.hamming(sizecut)
 
 sg = np.abs(fft(sg))
-maxS = max(sg)
+
 sg = np.log(sg) 
 ax4.plot(sg[0:len(sg)//2])
-maxx = max(sg)
+
 #ax3.plot(sg[0:sizecut//2])
 
 #sg = sg[0:int(sizecut/2)]
