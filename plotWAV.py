@@ -20,6 +20,8 @@ fig, (ax1, ax2, ax3) = pl.subplots(3 , 1 , sharex=False)
 wd = 20
 slide = 10
 
+
+
 ax1.plot(xplot, data)
 
 

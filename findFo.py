@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as pl
 from scipy.io.wavfile import read
 
-rate, data = read('khoosoothunhus.wav')
+rate, data = read('tam.wav')
 
 N = 300
 K = 150
@@ -49,11 +49,11 @@ fig, (ax1, ax2, ax3, ax4, ax5) = pl.subplots(5 , 1 , sharex=False)
 
 xplot = np.arange(len(data)) / rate
 ax1.plot(xplot, data)
-ax1.set_xlim([0, 6])
+#ax1.set_xlim([0, 6])
 
 F0 = []
 
-start = 8000
+start = 1000
 
 ax2.plot(data[start: start+N])
 ax3.plot(R(data[start: start+N]))
@@ -74,7 +74,8 @@ for i in range(0, len(data) - N, N ):
 		xplot4.append(i / rate)
 
 ax5.scatter(xplot4 ,F0)
-ax5.set_xlim([0, 6])
+#ax5.set_xlim([0, 6])
+print(F0)
 ax5.set_ylim([0, max(F0)])
 
 pl.show()

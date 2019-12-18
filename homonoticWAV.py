@@ -35,7 +35,7 @@ ax3.plot(sg)
 ax3.set_title('After Hamming')
 
 sg1 = np.abs(fft(sg))
-sg1 = sg1[0:int(sizecut/2)]
+#sg1 = sg1[0:int(sizecut/2)]
 sg1 = ifft(sg1)
 ax6.plot(sg1)
 ax6.set_title('Inverse fft without log')
@@ -45,8 +45,8 @@ ax4.set_title('fft')
 
 sg = np.abs(fft(sg))
 maxS = max(sg)
-sg = np.log10(sg / maxS) * (- 20)
-sg = sg[0:int(sizecut/2)]
+sg = np.log(sg)
+#sg = sg[0:int(sizecut/2)]
 
 sg = ifft(sg)
 
